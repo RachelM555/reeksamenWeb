@@ -13,10 +13,10 @@ public class Bil {
 
     // enum er faste værdier der ikke kan ændres og der skal vælges mellem en af dem.
     public enum Status {
-        ledig,
-        udlejet,
-        skadet,
-        tilbageleveret
+       LEDIG,
+       UDLEJET,
+       SKADET,
+       TILBAGELEVERET
     }
 
     public Bil() {}

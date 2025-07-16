@@ -12,7 +12,7 @@ public class Medarbejder {
 
     public enum Rolle
     {
-        DATAREGISTERING,
+        DATAREGISTRERING,
         FORRETNINGSUDVIKLER,
         SKADESMEDARBEJDER,
         FDM

@@ -6,11 +6,12 @@ public class Lejekontrakt {
     private int kontraktId;
     private int kundeId;
     private int bilId;
+    private int medarbejderId;
     private LocalDate startDato;
     private LocalDate slutDato;
     private AbonnementType abonnementType;
     private double pris;
-    private int medarbejderId;
+
 
 
 
@@ -20,16 +21,17 @@ public class Lejekontrakt {
 
     public Lejekontrakt() {}
 
-    public Lejekontrakt(int kontraktId, int kundeId, int bilId, LocalDate startDato,
-                        LocalDate slutDato, AbonnementType abonnementType, double pris, int medarbejderId) {
+    public Lejekontrakt(int kontraktId, int kundeId, int bilId, int medarbejderId, LocalDate startDato,
+                        LocalDate slutDato, AbonnementType abonnementType, double pris) {
         this.kontraktId = kontraktId;
         this.kundeId = kundeId;
         this.bilId = bilId;
+        this.medarbejderId = medarbejderId;
         this.startDato = startDato;
         this.slutDato = slutDato;
         this.abonnementType = abonnementType;
         this.pris = pris;
-        this.medarbejderId = medarbejderId;
+
     }
 
     // Getters

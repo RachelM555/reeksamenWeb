@@ -9,20 +9,20 @@ public class Tilstandsrapport
     private int tilstandsrapportId;
     private int bilId;
     private int kontraktId;
-    private LocalDate tilstandsrapportDato;
     private int medarbejderId;
+    private LocalDate tilstandsrapportDato;
     private boolean erSkadet;
 
 
     public Tilstandsrapport(){}
 
-    public Tilstandsrapport (int tilstandsrapportId, int bilId, int kontraktId, LocalDate tilstandsrapportDato, int medarbejderId, Boolean erSkadet )
+    public Tilstandsrapport (int tilstandsrapportId, int bilId, int kontraktId, int medarbejderId, LocalDate tilstandsrapportDato, Boolean erSkadet )
     {
         this.tilstandsrapportId = tilstandsrapportId;
         this.bilId = bilId;
         this.kontraktId = kontraktId;
-        this.tilstandsrapportDato = tilstandsrapportDato;
         this.medarbejderId = medarbejderId;
+        this.tilstandsrapportDato = tilstandsrapportDato;
         this.erSkadet = erSkadet;
     }
 
