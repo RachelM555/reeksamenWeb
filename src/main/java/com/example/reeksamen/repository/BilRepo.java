@@ -47,13 +47,21 @@ public class BilRepo {
         template.update(sql, bilId);
     }
 
-public void setBilUdlejet(int bilId,Bil.Status status)
-{
-    String sql ="UPDATE bil SET status = 'UDLEJET' WHERE bilId = ?";
-    template.update(sql,bilId,status.name());
-}
+    public void setBilUdlejet(int bilId)
+    {
+        String sql ="UPDATE bil SET status = 'UDLEJET' WHERE bilId = ?";
+        template.update(sql,bilId);
+    }
 
-    // TILFØJET: Opdater kun bil status
+    public void setBilLedig(int bilId)
+    {
+        String sql = "UPDATE bil set status = 'LEDIG' WHERE bilId = ?";
+        template.update(sql,bilId);
+    }
+
+
+
+
     public void updateBilStatus(int bilId, Bil.Status status) {
         String sql = "UPDATE bil SET status = ? WHERE bilId = ?";
         template.update(sql, bilId, status.name());
