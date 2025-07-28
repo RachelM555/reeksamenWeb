@@ -76,6 +76,6 @@ public class BilRepo {
 
     public void updateBilStatus(int bilId, Bil.Status status) {
         String sql = "UPDATE bil SET status = ? WHERE bilId = ?";
-        template.update(sql, bilId, status.name());
+        template.update(sql, status.name(), bilId);
     }
 }
