@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Service
 public class bilService
@@ -38,8 +38,10 @@ public class bilService
         bilRepo.deleteById(bilId);
     }
 
-    // Service til resterenee
-
+    public void updateBilStatus(int bilId, Bil.Status status)
+    {
+        bilRepo.updateBilStatus(bilId,status);
+    }
 
 }
 

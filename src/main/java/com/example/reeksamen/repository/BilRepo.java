@@ -40,16 +40,22 @@ public class BilRepo {
                 bil.getStatus().name(), bil.getRegAfgift(), bil.getCo2Udledning(), bil.getBilId());
     }
 
-    // TILFØJET: Opdater kun bil status
-    public void updateBilStatus(int bilId, Bil.Status status) {
-        String sql = "UPDATE bil SET status = ? WHERE bilId = ?";
-        int rowsAffected = template.update(sql, status.name(), bilId);
-    }
-
 
     // Slet en bil efter id
     public void deleteById(int bilId) {
         String sql = "DELETE FROM bil WHERE bilId = ?";
         template.update(sql, bilId);
+    }
+
+public void setBilUdlejet(int bilId,Bil.Status status)
+{
+    String sql ="UPDATE bil SET status = 'UDLEJET' WHERE bilId = ?";
+    template.update(sql,bilId,status.name());
+}
+
+    // TILFØJET: Opdater kun bil status
+    public void updateBilStatus(int bilId, Bil.Status status) {
+        String sql = "UPDATE bil SET status = ? WHERE bilId = ?";
+        template.update(sql, bilId, status.name());
     }
 }
