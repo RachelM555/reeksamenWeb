@@ -19,7 +19,7 @@ public class bilService
     private JdbcTemplate template;
 
     // Service til CRUD metoderne
-    public List<Bil> getAllBil()
+    public List<Bil> fetchAll()
     {
         return bilRepo.fetchAll();
     }
@@ -33,9 +33,26 @@ public class bilService
         bilRepo.updateBil(bil);
     }
 
-    public void deleteBil(int bilId)
+    public void deleteById(int bilId)
     {
         bilRepo.deleteById(bilId);
+    }
+
+    public void setBilUdlejet(int bilId)
+    {
+        bilRepo.setBilUdlejet(bilId);
+    }
+    public void setBilLedig(int bilId)
+    {
+        bilRepo.setBilLedig(bilId);
+    }
+    public List<Bil> getBilUdlejet()
+    {
+        return bilRepo.getBilUdlejet();
+    }
+    public List<Bil> getBilLedig()
+    {
+        return bilRepo.getBilLedig();
     }
 
     public void updateBilStatus(int bilId, Bil.Status status)
