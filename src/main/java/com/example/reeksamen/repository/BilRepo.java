@@ -59,7 +59,19 @@ public class BilRepo {
         template.update(sql,bilId);
     }
 
+    public List<Bil> getBilUdlejet()
+    {
+        String sql = "SELECT * FROM bil WHERE status = 'UDLEJET'";
+        RowMapper<Bil> rowMapper = new BeanPropertyRowMapper<>(Bil.class);
+        return template.query(sql,rowMapper);
+    }
 
+    public List<Bil> getBilLedig()
+    {
+        String sql = "SELECT * FROM bil WHERE status = 'LEDIG'";
+        RowMapper<Bil> rowMapper = new BeanPropertyRowMapper<>(Bil.class);
+        return template.query(sql,rowMapper);
+    }
 
 
     public void updateBilStatus(int bilId, Bil.Status status) {
