@@ -38,7 +38,7 @@ public class bilService
         bilRepo.deleteById(bilId);
     }
 
-    // Service til resterene
+    // Service til resterenee
 
 
 }
