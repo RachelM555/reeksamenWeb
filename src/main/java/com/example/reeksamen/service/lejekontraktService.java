@@ -37,26 +37,34 @@ public class lejekontraktService {
         lejekontraktRepo.deleteLejekontrakt(kontraktId, bilId);
     }
 
-    public double beregnSamletPris() {
-        List<Lejekontrakt> lejekontrakt = lejekontraktRepo.fetchAll();
 
+    public double beregnSamletPris() {
+
+        List<Lejekontrakt> lejekontrakt = lejekontraktRepo.fetchAll();
+        // Opretter en HashMap til at gemme kontraktId og pris (Double)
         Map<Integer, Double> samletPris = new HashMap<>();
 
+        // Går igennem alle lejekontrakter og lægger dem ind i mappen
         for (int i = 0; i < lejekontrakt.size(); i++) {
-            Lejekontrakt kontrakt = lejekontrakt.get(i);
-            samletPris.put(kontrakt.getKontraktId(), kontrakt.getPris());
+            Lejekontrakt kontrakt = lejekontrakt.get(i); // Henter en kontrakt ad gangen
+            samletPris.put(kontrakt.getKontraktId(), kontrakt.getPris()); // Gemmer kontraktId og pris
         }
 
+        // Variabel til at holde den samlede pris
         double prisSum = 0.0;
-        List<Double> priser = new ArrayList<>(samletPris.values());
-        for ( int i = 0; i < priser.size(); i++ )
-        {
-            prisSum += priser.get(i);
 
+        // Henter alle værdierne kun altså priserne fra mappen som en liste
+        List<Double> priser = new ArrayList<>(samletPris.values());
+
+        for (int i = 0; i < priser.size(); i++) {
+            prisSum += priser.get(i); // Lægger prisen til den samlede sum
         }
+
+        // Returnerer den samlede pris for alle lejekontrakter
         return prisSum;
     }
 }
+
 
 
 

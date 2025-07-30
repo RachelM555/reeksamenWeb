@@ -30,11 +30,4 @@ public Medarbejder findByEmail (String email)
     return template.queryForObject(sql,rowMapper,email);
 }
 
-
-
-
-
-
-
-
 }
