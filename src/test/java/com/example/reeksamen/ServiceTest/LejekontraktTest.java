@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
@@ -47,13 +48,22 @@ class ReeksamenApplicationTests {
     public void testDeleteKontrakt()
     {
         System.out.println("Testen deleteKontrakt starter");
-        Lejekontrakt testkontrakt= new Lejekontrakt(0, 1,2,1, LocalDate.of(2025,6,12), LocalDate.of(2025,12,12), Lejekontrakt.AbonnementType.LIMITED, 3000.00);
 
-        lejekontraktService.addLejekontrakt(testkontrakt);
+        int kontraktId = 4;
+        int bilId = 1;
 
-        lejekontraktService.deleteLejekontrakt(0,2);
+        lejekontraktService.deleteLejekontrakt(kontraktId,bilId);
+
         List<Lejekontrakt> lejekontrakt = lejekontraktService.fetchAll();
-        assertTrue(lejekontrakt.size()==0, "den er ikke slettet");
+
+        boolean fundet = false;
+        for (int i = 0; i < lejekontrakt.size(); i++) {
+            if (lejekontrakt.get(i).getKontraktId() == kontraktId) {
+                fundet = true;
+                break;
+            }
+        }
+        assertFalse(fundet, "lejekontraktden er ikke slettet");
     }
 }
 
