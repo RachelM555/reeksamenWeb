@@ -29,7 +29,7 @@ public class LejekontraktRepo {
     public void addLejekontrakt(Lejekontrakt l)
     {
         String sql = "INSERT INTO lejekontrakt(kundeId, bilId, startDato, slutDato,abonnementType, pris, medarbejderId)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        template.update(sql, l.getKundeId(),l.getBilId(), l.getStartDato(), l.getSlutDato(), l.getAbonnementType(),l.getPris(), l.getMedarbejderId());
+        template.update(sql, l.getKundeId(),l.getBilId(), l.getStartDato(), l.getSlutDato(), l.getAbonnementType().name(),l.getPris(), l.getMedarbejderId());
 
         bilRepo.updateBilStatus(l.getBilId(), Bil.Status.UDLEJET);
 
