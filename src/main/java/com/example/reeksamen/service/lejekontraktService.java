@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class lejekontraktService {
@@ -20,23 +23,44 @@ public class lejekontraktService {
         return lejekontraktRepo.fetchAll();
     }
 
-    public void addLejekontrakt(Lejekontrakt kontrakt)
-    {
-            // Opretter en lejekontrakt
-            lejekontraktRepo.addLejekontrakt(kontrakt);
+    public void addLejekontrakt(Lejekontrakt kontrakt) {
+        // Opretter en lejekontrakt
+        lejekontraktRepo.addLejekontrakt(kontrakt);
 
     }
 
-    public void updateLejekontrakt(Lejekontrakt kontrakt)
-    {
+    public void updateLejekontrakt(Lejekontrakt kontrakt) {
         lejekontraktRepo.updateLejekontrakt(kontrakt);
     }
 
-    public void deleteLejekontrakt(int kontraktId, int bilId)
-    {
+    public void deleteLejekontrakt(int kontraktId, int bilId) {
         lejekontraktRepo.deleteLejekontrakt(kontraktId, bilId);
     }
+
+    public double beregnSamletPris() {
+        List<Lejekontrakt> lejekontrakt = lejekontraktRepo.fetchAll();
+
+        Map<Integer, Double> samletPris = new HashMap<>();
+
+        for (int i = 0; i < lejekontrakt.size(); i++) {
+            Lejekontrakt kontrakt = lejekontrakt.get(i);
+            samletPris.put(kontrakt.getKontraktId(), kontrakt.getPris());
+        }
+
+        double prisSum = 0.0;
+        List<Double> priser = new ArrayList<>(samletPris.values());
+        for ( int i = 0; i < priser.size(); i++ )
+        {
+            prisSum += priser.get(i);
+
+        }
+        return prisSum;
+    }
 }
+
+
+
+
 
 
 

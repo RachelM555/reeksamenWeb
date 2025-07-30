@@ -65,5 +65,14 @@ class ReeksamenApplicationTests {
         }
         assertFalse(fundet, "lejekontraktden er ikke slettet");
     }
+
+
+    @Test
+    public void testBeregningSum()
+    {
+        System.out.println("pris testen starter");
+        double samletPris = lejekontraktService.beregnSamletPris();
+        System.out.println("Samlet pris af alle lejekontrakterne er"+ " " + samletPris + " " + "DKK");
+    }
 }
 
