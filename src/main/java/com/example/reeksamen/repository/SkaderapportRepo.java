@@ -29,15 +29,15 @@ public class SkaderapportRepo {
 
 
     public void updateSkaderapport(Skaderapport skaderapport) {
-        String sql = " UDPATE skaderapport SET tilstandsrapportId = ?, medarbejderId = ?, antalSkader= ?, prisPrSkade= ?, prisTotal = ?, beskrivelse = ? WHERE skaderapportId = ?";
-        template.update(sql, skaderapport.getTilstandsrapportId(), skaderapport.getMedarbejderId(), skaderapport.getAntalSkader(), skaderapport.getPrisPrSkade(), skaderapport.getPrisTotal(), skaderapport.getBeskrivelse());
+        String sql = " UPDATE skaderapport SET tilstandsrapportId = ?, medarbejderId = ?, antalSkader= ?, prisPrSkade= ?, prisTotal = ?, beskrivelse = ? WHERE skadeId = ?";
+        template.update(sql, skaderapport.getTilstandsrapportId(), skaderapport.getMedarbejderId(), skaderapport.getAntalSkader(), skaderapport.getPrisPrSkade(), skaderapport.getPrisTotal(), skaderapport.getBeskrivelse(), skaderapport.getSkadeId());
     }
 
-    // 5. Slet skaderapport efter id
-    public int sletEfterId(int skaderapportId) {
-        String sql = "DELETE FROM skaderapport WHERE skaderapport_id = ?";
-        System.out.println("Sletter skaderapport med ID: " + skaderapportId);
-        return template.update(sql, skaderapportId);
+
+    public int deleteById(int skadeId) {
+        String sql = "DELETE FROM skaderapport WHERE skadeid = ?";
+        System.out.println("Sletter skaderapport med ID: " + skadeId);
+        return template.update(sql, skadeId);
     }
 
 

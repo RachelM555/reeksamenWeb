@@ -30,7 +30,7 @@ public class TilstandsrapportRepo {
     public void updateTilstandsrapport ( Tilstandsrapport tilstandsrapport)
     {
         String sql = "UPDATE tilstandsrapport SET bilId = ?, kontraktId= ?, tilstandsrapportDato = ?, medarbejderId= ?, erSkadet = ? WHERE tilstandsrapportId = ?";
-        template.update(sql, tilstandsrapport.getBilId(), tilstandsrapport.getKontraktId(), tilstandsrapport.getTilstandsrapportDato(), tilstandsrapport.getMedarbejderId(), tilstandsrapport.isErSkadet());
+        template.update(sql, tilstandsrapport.getBilId(), tilstandsrapport.getKontraktId(), tilstandsrapport.getTilstandsrapportDato(), tilstandsrapport.getMedarbejderId(), tilstandsrapport.isErSkadet(), tilstandsrapport.getTilstandsrapportId());
     }
 
     public int deleteById(int tilstandsrapportId) {
