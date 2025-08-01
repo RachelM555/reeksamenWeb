@@ -29,6 +29,8 @@ public Medarbejder findByEmail (String email)
     RowMapper<Medarbejder> rowMapper = new BeanPropertyRowMapper<>(Medarbejder.class);
     return template.queryForObject(sql,rowMapper,email);
 
+
+
 }
 
     public boolean validateLogin(String email, String adgangskode) {
