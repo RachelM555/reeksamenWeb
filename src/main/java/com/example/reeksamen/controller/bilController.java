@@ -17,6 +17,7 @@ public class bilController {
     {
         Boolean loggedeInd = (Boolean) session.getAttribute("loggedeInd");
 
+        // Returner true hvis: "loggedInd" ikke findes i sessionen (dvs. null fx, når man besøger en hjemmeside og session ikke har gemt nogle oplysninger) eller "loggedInd" findes men er false, altså brugeren er ikke logget ind
         return loggedeInd == null || !loggedeInd;
     }
 
