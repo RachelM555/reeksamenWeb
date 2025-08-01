@@ -22,7 +22,7 @@ public class SkaderapportRepo {
         return template.query(sql, rowMapper);
     }
 
-    public void addSkaderapoort(Skaderapport skaderapport) {
+    public void addSkaderapport(Skaderapport skaderapport) {
         String sql = "INSERT INTO skaderapport (tilstandsrapportId, medarbejderId, antalSkader, prisPrSkade, prisTotal, beskrivelse)" + "VALUES (?,?,?,?,?,?)";
         template.update(sql, skaderapport.getTilstandsrapportId(), skaderapport.getMedarbejderId(), skaderapport.getAntalSkader(), skaderapport.getPrisPrSkade(), skaderapport.getPrisTotal(), skaderapport.getBeskrivelse());
     }
