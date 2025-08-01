@@ -23,13 +23,13 @@ public class TilstandsrapportRepo {
 
     public void addTilstandsrapport(Tilstandsrapport tilstandsrapport)
     {
-        String sql = " INSERT INTO tilstandsrapport(bilId, kontraktId, tilstandsrapportDato, medarbejderId, erSKadet) " + "VALUES (?,?,?,?,?)";
+        String sql = " INSERT INTO tilstandsrapport(bilId, kontraktId, tilstandsrapportDato, medarbejderId, erSKadet ) " + "VALUES (?,?,?,?,?)";
         template.update(sql, tilstandsrapport.getBilId(), tilstandsrapport.getKontraktId(), tilstandsrapport.getTilstandsrapportDato(), tilstandsrapport.getMedarbejderId(), tilstandsrapport.isErSkadet());
     }
 
     public void updateTilstandsrapport ( Tilstandsrapport tilstandsrapport)
     {
-        String sql = "UPDATE tilstandsrapport SET bilId = ?, kontraktId= ?, tilstandsrapportDato = ?, medarbejderId= ?, erSkadet = ?";
+        String sql = "UPDATE tilstandsrapport SET bilId = ?, kontraktId= ?, tilstandsrapportDato = ?, medarbejderId= ?, erSkadet = ? WHERE tilstandsrapportId = ?";
         template.update(sql, tilstandsrapport.getBilId(), tilstandsrapport.getKontraktId(), tilstandsrapport.getTilstandsrapportDato(), tilstandsrapport.getMedarbejderId(), tilstandsrapport.isErSkadet());
     }
 
