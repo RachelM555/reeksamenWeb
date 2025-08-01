@@ -1,6 +1,4 @@
 package com.example.reeksamen.service;
 
-public class medarbejderService
-{
-
+public class skaderapportService {
 }
