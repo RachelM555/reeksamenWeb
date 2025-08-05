@@ -4,22 +4,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Opret bil</title>
-    <link rel="stylesheet" th:href="/">
+    <title>Opret en ny bil</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
 <body>
 
+<div class="intro-opretBil">
+    <h1>Opret bil</h1>
+</div>
+
+<div class="tabel-opretBil">
+   <form th:href="@{/opretBil}" th:objekt="@{Bil}" method="post">
+
+       <label for="stelNr"> Stelnummer:</label>
+       <input type="number" id="stelNr" th:field="*{stelNr}" required>
+
+       <label for="maerke"> Mærke: </label>
+       <input type="text" id="maerke" th:field="*{maerke}" required>
+
+       <label for="model"> Model: </label>
+       <input type="text" id="model" th:field="*{model}" required>
+
+       <label for="udstyrsniveau"> Udstyrsniveau: </label>
+       <input type="text" id="udstyrsniveau" th:field="*{udstyrsniveau}" required>
+
+       <label for="status"> Status:</label>
+       <select id="status" th:field="*{status}" required>
+         <option value=""> Vælg bilens status: </option>
+         <option value="LEJET" >Lejet</option>
+         <option value="UDLEJET">Udlejet</option>
+       </select>
+
+      <label for="regAfgift"> reg afgift: </label>
+       <input type="number" id="regAfgift" th:field="*{regAfgift}" required>
+
+       <label for="co2Udledning"> co2 udledning: </label>
+       <input type="number" id="co2Udledning" th:field="*{co2Udledning}" required>
+
+       <button type="submit">Opret bil</button>
 
 
+   </form>
+
+    <div class="tilbage-knap">
+        <a th:href="@{/}"><button>Tilbage til liste</button></a>
+    </div>
 
 
-
-
-
-
-
-
+</div>
 
 
 </body>

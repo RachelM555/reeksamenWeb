@@ -1,9 +1,16 @@
 package com.example.reeksamen.controller;
 
+
+import com.example.reeksamen.model.Bil;
 import com.example.reeksamen.service.bilService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
 
 @Controller
 public class bilController {
@@ -21,8 +28,29 @@ public class bilController {
         return loggedeInd == null || !loggedeInd;
     }
 
+    @GetMapping("/opretBil") // viser/henter formularen til oprettelsen af biler
+    public String opretBil(HttpSession session, Model model)
+    {
+
+        if (ikkeLoggedInd(session))
+        {
+            return "redirect:/login";
+        }
+        else model.addAttribute("bil", new Bil());
+        return "opretBil";
+    }
+
+    @PostMapping("/opretBil") // gemmer bilen
+    public String gemBil(HttpSession session, @ModelAttribute Bil bil) // @ModelAttribute Bil bil referer til den forrige metode hvor man adder bilen til model og her bruges den til at gemme den oprettet bil
+    {
+        if(ikkeLoggedInd(session))
+        {
+            return "redirect:/login";
+        }
+        else bilService.addBil(bil);
 
 
-
+        return "redirect/bilOverblik";
+    }
 
 }
