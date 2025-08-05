@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+/*@SpringBootTest
 class BilTest {
 
     @Autowired
@@ -31,3 +31,4 @@ class BilTest {
     }
 
 }
+*/

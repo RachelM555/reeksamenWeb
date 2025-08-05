@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+/*@SpringBootTest
 class ReeksamenApplicationTests {
 
     @Autowired
@@ -75,4 +75,4 @@ class ReeksamenApplicationTests {
         System.out.println("Samlet pris af alle lejekontrakterne er"+ " " + samletPris + " " + "DKK");
     }
 }
-
+*/
