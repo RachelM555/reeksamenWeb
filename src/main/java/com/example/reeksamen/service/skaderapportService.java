@@ -37,5 +37,6 @@ public class skaderapportService {
    {
        return skaderapportRepo.deleteById(skadeId);
    }
+   // random
 
 }
