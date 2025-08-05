@@ -3,10 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Bil overblik</title>
+    <title> Overblik over bilerne</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 
+<div class="intro-bilListe">
+    <h1>Liste over bilerne </h1>
+</div>
 
+<div class="tabeloverskrift-bil">
+    <table>
+     <thead>
+     <tr>
+         <th> Bil Id</th>
+         <th> Stel Nummer</th>
+         <th> Mærke</th>
+         <th> Model</th>
+         <th> udstyrsniveau</th>
+         <th> Status</th>
+         <th> Reg Afgift</th>
+         <th> Co2 Udledning</th>
+
+     </tr>
+     </thead>
+    </table>
+</div>
+
+<tbody>
+<tr th:each="bil: " >
+
+
+
+
+
+
+</tr>
+
+
+
+
+
+</tbody>
 
 
 <body>

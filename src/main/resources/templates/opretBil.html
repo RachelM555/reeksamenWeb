@@ -15,7 +15,7 @@
 </div>
 
 <div class="tabel-opretBil">
-   <form th:href="@{/opretBil}" th:objekt="@{Bil}" method="post">
+   <form th:action="@{/opretBil}" th:object="${bil}" method="post">
 
        <label for="stelNr"> Stelnummer:</label>
        <input type="number" id="stelNr" th:field="*{stelNr}" required>
@@ -43,7 +43,6 @@
        <input type="number" id="co2Udledning" th:field="*{co2Udledning}" required>
 
        <button type="submit">Opret bil</button>
-
 
    </form>
 
