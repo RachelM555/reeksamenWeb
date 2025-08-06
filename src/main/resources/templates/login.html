@@ -3,19 +3,34 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login side</title>
+    <title>Bilabonnement A/S - Login </title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
-
-
 
 <body>
 
+<div class="login-intro">
+    <div class="logo">
+       <img src="static/images/logo.jpg">
+    </div>
+</div>
 
+<div class="fejl-besked" th:if="${fejl}"  th:text="${fejl}"> </div>
 
+<div class="tabel-login">
+   <form  th:action="@{/login}" method="post">
+       <label for="email"> Email</label>
+       <input type="text" id="email" th:field="*{email}" required>
+
+       <label for="adgangskode"> Adgangskode</label>
+       <input type="text" id="adgangskode" th:field="*{adgangskode}" required>
+
+       <button type="submit" class="login-knap">Log på</button>
+
+   </form>
+
+</div>
 
 </body>
-
-
-
 
 </html>
