@@ -51,7 +51,7 @@
         <div class="tabel-opdaterBil">
             <form th:action="@{/opdaterBil}" th:object="${bil}" method="post">
 
-                <<!--id'et er skjult for brugeren, men er der stadig så systemet ved hvilken bil(id) der skal opdateres-->>
+                <<!--id'et er skjult for brugeren, men er der stadig så systemet ved hvilken bil(id) der skal opdateres.....-->>
                 <input type="hidden" th:field="*{bilId}" />
 
                 <label for="stelNr">Stelnummer:</label>

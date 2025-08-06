@@ -66,7 +66,7 @@ public class bilController {
         }
         List<Bil> bilList = bilService.fetchAll();
 
-        // Bilerne fra bilList som bliver hentet fra bilService.fetchAll()
+        /////Bilerne fra bilList som bliver hentet fra bilService.fetchAll()
         //bliver tilføjet som en attribut i metode model.addAttribute, så HTML siden "bilOverblik.html" kan få adgang til bilList
         model.addAttribute("bilOverblik",bilList);
 
