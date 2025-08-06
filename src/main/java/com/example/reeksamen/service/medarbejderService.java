@@ -27,4 +27,7 @@ public class medarbejderService {
         return medarbejderRepo.validateLogin(email, adgangskode);
     }
 
+
+
+
 }
