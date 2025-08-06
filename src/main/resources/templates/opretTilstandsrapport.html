@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Opret Tilstandsrapport</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
 </head>
+
+
 <body>
 
+<div class="intro-tsformular">
+    <h1>Opret Tilstandsrapport</h1>
+</div >
+
+
+<div class="ts-formular">
+    <form th:action="@{/tilstandsrapport/gem}" th:object="${rapport}" method="post">
+
+
+        <label for="bilId">Bil ID (nummer)</label>
+        <input type="number" id="bilId" th:field="*{bilId}" required />
+
+
+        <label for="kontraktId">Lejekontrakt ID (nummer)</label>
+        <input type="number" id="kontraktId" th:field="*{kontraktId}" required />
+
+
+        <label for="tilstandsrapportDato">Dato</label>
+        <input type="date" id="tilstandsrapportDato" th:field="*{tilstandsrapportDato}" required />
+
+
+        <label for="medarbejderId">Medarbejder ID (nummer)</label>
+        <input type="number" id="medarbejderId" th:field="*{medarbejderId}" required />
+
+
+        <label for="erSkadet">
+            <input type="checkbox" id="erSkadet" th:field="*{erSkadet}" /> Er bilen skadet?
+        </label>
+
+
+        <button type="submit">Gem</button>
+
+
+    </form>
+</div>
+<div class="tilbage-knap">
+    <a href="/tilstandsrapport"><button>Tilbage</button></a>
+</div>
+
+
+
+
 </body>
+
+
+
 </html>

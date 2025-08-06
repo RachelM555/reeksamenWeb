@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bilabonnement A/S</title>
+    <link rel="stylesheet"  th:href="@{/style.css}">
 </head>
+
+
 <body>
 
+
+<div class="intro-opretKunde">
+    <h1>Opret kunde</h1>
+</div>
+
+<div class="tabel-opretKunde">
+    <form th:action="@{/opretKunde}" method="post" th:object="${kunde}">
+
+        <label for="navn">Navn</label>
+        <input type="text" id="navn" th:field="*{navn}" required />
+
+        <label for="adresse">Adresse</label>
+        <input type="text" id="adresse" th:field="*{adresse}" required />
+
+        <label for="telefonnr">Telefonnummer</label>
+        <input type="text" id="telefonnr" th:field="*{telefonNr}" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" th:field="*{email}" required />
+
+        <button type="submit">Opret kunde</button>
+    </form>
+</div>
+
+<!-- tilbage-link -->
+<div class="tilbage-knap">
+    <a th:href="@{/kundeOverblik}"><button>Tilbage</button></a>
+</div>
+
 </body>
+
+
+
 </html>

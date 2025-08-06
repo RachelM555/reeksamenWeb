@@ -1,50 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<<head>
+    <link rel="stylesheet"  th:href="@{/style.css}">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Overblik over lejekontrakterne</title>
 </head>
+
 
 
 <body>
 
 
+<div class="intro-kontraktListe">
+    <h1>Liste over lejekontrakter</h1>
+</div>
 
-<<!--Opdater en bil-->>
-<div class="tabel-opdaterBil">
-    <form th:action="@{/opdaterBil}" th:object="${bil}" method="post">
+<div class="tabelOverskrift-lejekontrakt">
+    <table>
+        <thead>
+        <tr>
+            <th>Lejekontrakt ID</th>
+            <th>Kunde ID</th>
+            <th>Bil ID</th>
+            <th>Start dato</th>
+            <th>Slut dato</th>
+            <th>Abonnementstype</th>
+            <th>Pris</th>
+            <th>Medarbejder ID</th>
 
-        <<!--id'et er skjult for brugeren, men er der stadig så systemet ved hvilken bil(id) der skal opdateres-->>
-        <input type="hidden" th:field="*{bilId}" />
+        </tr>
+        </thead>
 
-        <label for="stelNr">Stelnummer:</label>
-        <input type="number" id="stelNr" th:field="*{stelNr}" required />
+        <tbody>
+        <tr th:each="lejekontrakt : ${lejekontraktListe}">
+            <td th:text="${lejekontrakt.kontraktId}"></td>
+            <td th:text="${lejekontrakt.kundeId}"></td>
+            <td th:text="${lejekontrakt.bilId}"></td>
+            <td th:text="${lejekontrakt.startDato}"></td>
+            <td th:text="${lejekontrakt.slutDato}"></td>
+            <td th:text="${lejekontrakt.abonnementType == T(com.example.bil.model.Lejekontrakt.AbonnementType).limited ? 'Limited' : 'Unlimited'}"></td>
+            <td th:text="${lejekontrakt.pris}"></td>
+            <td th:text="${lejekontrakt.medarbejderId}"></td>
 
-        <label for="maerke">Mærke:</label>
-        <input type="text" id="maerke" th:field="*{maerke}" required />
+            <td>
+                <form th:action="@{'/slet-lejekontrakt/' + ${lejekontrakt.kontraktId}}" method="get"
+                      onsubmit="return confirm('Er du sikker på, at du vil slette denne lejekontrakt?');"
+                      style="display: inline;">
+                    <button type="submit" class="slet-knap">Slet</button>
+                </form>
 
-        <label for="model">Model:</label>
-        <input type="text" id="model" th:field="*{model}" required />
+                <a th:href="@{'/updateLejekontrakt/' + ${lejekontrakt.kontraktId}}">
+                    <button class="update-knap">Rediger</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-        <label for="udstyrsniveau">Udstyrsniveau:</label>
-        <input type="text" id="udstyrsniveau" th:field="*{udstyrsniveau}" required />
+<!-- opret lejekontrakt knappen-->
+<div class="opret-knaplejekontrakt">
+    <a href="/opretLejekontrakt">
+        <button class="opret-knap">Opret ny lejekontrakt</button>
+    </a>
+</div>
 
-        <label for="status">Status:</label>
-        <select id="status" th:field="*{status}" required>
-            <option value=""> Vælg bilens status: </option>
-            <option value="LEJET" >Lejet</option>
-            <option value="UDLEJET">Udlejet</option>
-        </select>
-
-        <label for="regAfgift">Registreringsafgift:</label>
-        <input type="number" id="regAfgift" th:field="*{regAfgift}" required />
-
-        <label for="co2Udledning">CO2-udledning:</label>
-        <input type="number" id="co2Udledning" th:field="*{co2Udledning}" required />
-
-        <button type="submit">Opdater bil</button>
-    </form>
+<!-- Opdater knappen -->
+<div class="update-knapLejekontrakt">
+    <a href="/updateLejekontrakt">
+        <button class="update-knap">Opdater en lejekontrakt</button>
+    </a>
 </div>
 
 

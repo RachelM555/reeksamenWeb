@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Opdater lejekontrakt</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
+
+
 <body>
+
+<div class="intro-updateLejekontrakt">
+    <h1>Opdater lejekontrakt</h1>
+</div>
+
+<div class="tabel-updateLejekontrakt">
+    <form th:action="@{/updateLejekontrakt}" th:object="${updateLejekontrakt}" method="post">
+
+        <label>Kontrakt ID</label>
+        <input type="text" th:field="*{kontraktId}" readonly><br>
+
+        <label>Kunde ID</label>
+        <input type="text" th:field="*{kundeId}"><br>
+
+        <label>Bil ID</label>
+        <input type="text" th:field="*{bilId}"><br>
+
+        <label>Start dato</label>
+        <input type="date" th:field="*{startDato}"><br>
+
+        <label>Slut dato</label>
+        <input type="date" th:field="*{slutDato}"><br>
+
+        <label>Abonnementstype</label>
+        <input type="text" th:field="*{abonnementType}"><br>
+
+        <label>Pris</label>
+        <input type="text" th:field="*{pris}"><br>
+
+        <label>Medarbejder ID</label>
+        <input type="text" th:field="*{medarbejderId}"><br>
+
+        <button type="submit">Opdater</button>
+
+    </form>
+</div>
+
+<div class="tilbage-knap">
+    <a th:href="@{/lejekontraktOverblik}"><button>Tilbage til liste</button></a>
+</div>
+
+
 
 </body>
 </html>

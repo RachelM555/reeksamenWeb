@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="stylesheet" th:href="@{/style.css}">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Opret en lejekontrakt</title>
 </head>
+
+
+
 <body>
 
+<div class="intro-opretKontrakt">
+    <h1>Opret ny lejekontrakt</h1>
+</div>
+
+<div class="tabel-opretLejekontrakt">
+    <!-- RETTET: Form action til korrekt URL -->
+    <form th:action="@{/opretLejekontrakt}" method="post" th:object="${lejekontrakt}">
+
+        <label for="kontraktId">Lejekontrakt ID</label>
+        <input type="number" id="kontraktId" th:field="*{kontraktId}" required>
+
+        <label for="kundeId">Kunde ID</label>
+        <input type="number" id="kundeId" th:field="*{kundeId}" required>
+
+        <label for="bilId">Bil ID</label>
+        <input type="number" id="bilId" th:field="*{bilId}" required>
+
+        <label for="startDato">Start dato</label>
+        <input type="date" id="startDato" th:field="*{startDato}" required>
+
+        <label for="slutDato">Slut dato</label>
+        <input type="date" id="slutDato" th:field="*{slutDato}" required>
+
+
+        <label for="abonnementType">Abonnementstype</label>
+        <select id="abonnementType" th:field="*{abonnementType}" required>
+            <option value="">Vælg abonnementstype</option>
+            <option value="limited">Limited</option>
+            <option value="unlimited">Unlimited</option>
+        </select>
+
+        <label for="pris">Pris</label>
+        <input type="number" id="pris" th:field="*{pris}" step="0.01" required>
+
+        <label for="medarbejderId">Medarbejder ID</label>
+        <input type="number" id="medarbejderId" th:field="*{medarbejderId}" required>
+
+        <button type="submit">Opret</button>
+    </form>
+</div>
+
+<div class="tilbage-knap">
+    <a th:href="@{/lejekontraktOverblik}"><button>Tilbage til liste</button></a>
+</div>
+
 </body>
+
+
 </html>
