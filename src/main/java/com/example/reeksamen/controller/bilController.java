@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 public class bilController {
@@ -52,5 +55,23 @@ public class bilController {
 
         return "redirect/bilOverblik";
     }
+
+    @GetMapping("/bilOverblik")
+    public String bilOversigt(HttpSession session, Model model)
+    {
+        if (ikkeLoggedInd(session))
+        {
+            return "redirect:/login";
+        }
+        List<Bil> bilList = bilService.fetchAll();
+
+        // Bilerne fra bilList som bliver hentet fra bilService.fetchAll()
+        //bliver tilføjet som en attribut i metode model.addAttribute, så HTML siden "bilOverblik.html" kan få adgang til bilList
+        model.addAttribute("bilOverblik",bilList);
+
+        return "bilOverblik";
+    }
+
+//noteee
 
 }
