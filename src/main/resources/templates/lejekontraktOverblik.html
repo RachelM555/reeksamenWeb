@@ -11,7 +11,41 @@
 
 
 
+<<!--Opdater en bil-->>
+<div class="tabel-opdaterBil">
+    <form th:action="@{/opdaterBil}" th:object="${bil}" method="post">
 
+        <<!--id'et er skjult for brugeren, men er der stadig så systemet ved hvilken bil(id) der skal opdateres-->>
+        <input type="hidden" th:field="*{bilId}" />
+
+        <label for="stelNr">Stelnummer:</label>
+        <input type="number" id="stelNr" th:field="*{stelNr}" required />
+
+        <label for="maerke">Mærke:</label>
+        <input type="text" id="maerke" th:field="*{maerke}" required />
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" th:field="*{model}" required />
+
+        <label for="udstyrsniveau">Udstyrsniveau:</label>
+        <input type="text" id="udstyrsniveau" th:field="*{udstyrsniveau}" required />
+
+        <label for="status">Status:</label>
+        <select id="status" th:field="*{status}" required>
+            <option value=""> Vælg bilens status: </option>
+            <option value="LEJET" >Lejet</option>
+            <option value="UDLEJET">Udlejet</option>
+        </select>
+
+        <label for="regAfgift">Registreringsafgift:</label>
+        <input type="number" id="regAfgift" th:field="*{regAfgift}" required />
+
+        <label for="co2Udledning">CO2-udledning:</label>
+        <input type="number" id="co2Udledning" th:field="*{co2Udledning}" required />
+
+        <button type="submit">Opdater bil</button>
+    </form>
+</div>
 
 
 </body>
