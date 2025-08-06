@@ -58,6 +58,6 @@ public class skaderapportController
         else skaderapportService.deleteById(skadeId);
         return "redirect:/kundeOverblik";
     }
-
+//b
 
 }
