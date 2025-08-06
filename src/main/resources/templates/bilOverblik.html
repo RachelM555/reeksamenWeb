@@ -30,8 +30,21 @@
 </div>
 
 <tbody>
-<tr th:each="bil: " >
+<tr th:each="bil: ${bilOverblik}">
+    <td th:text="${bil.stelNr}"></td>
+    <td th:text="${bil.maerke}"></td>
+    <td th:text="${bil.model}"></td>
+    <td th:text="${bil.udstyrsniveau}"></td>
+    <td th:text="${bil.status}"></td>
+    <td th:text="${bil.regAfgift}"></td>
+    <td th:text="${bil.co2Udledning}"></td>
 
+    <td>
+
+
+
+
+    </td>
 
 
 
