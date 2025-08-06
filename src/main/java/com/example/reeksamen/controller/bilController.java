@@ -54,7 +54,7 @@ public class bilController {
         else bilService.addBil(bil);
 
 
-        return "redirect/bilOverblik";
+        return "redirect:/bilOverblik";
     }
 
     @GetMapping("/bilOverblik")
@@ -83,7 +83,7 @@ public class bilController {
 
         else bilService.deleteById(bilId);
 
-        return "redirect/bilOverblik";
+        return "redirect:/bilOverblik";
 
 
     }
