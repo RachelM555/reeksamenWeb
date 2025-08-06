@@ -20,10 +20,10 @@
 <div class="tabel-login">
    <form  th:action="@{/login}" method="post">
        <label for="email"> Email</label>
-       <input type="text" id="email" th:field="*{email}" required>
+       <input type="text" id="email" name="email" required>
 
        <label for="adgangskode"> Adgangskode</label>
-       <input type="text" id="adgangskode" th:field="*{adgangskode}" required>
+       <input type="text" id="adgangskode" name="adgangskode" required>
 
        <button type="submit" class="login-knap">Log på</button>
 

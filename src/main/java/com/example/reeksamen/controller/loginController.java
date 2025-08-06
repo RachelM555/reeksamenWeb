@@ -33,7 +33,7 @@ public class loginController {
     }
 
 
-    @PostMapping("/Login")
+    @PostMapping("/login")
     public String tjekLogin(@RequestParam String email, @RequestParam String adgangskode, HttpSession session, Model model)
     {
         Medarbejder medarbejder = medarbejderService.findByEmail(email);
@@ -42,18 +42,18 @@ public class loginController {
             session.setAttribute("medarbejderId", medarbejder.getMedarbejderId());
             session.setAttribute("medarbejderNavn", medarbejder.getNavn());
             session.setAttribute("medarbejderRolle", medarbejder.getRolle());
-            session.setAttribute("loggedInd", true);
+            session.setAttribute("loggedeInd", true);
             return "redirect:/dashboard";
         }
         else model.addAttribute("fejl","Forkert email eller adgangskode");
         return "login";
     }
 
-    @GetMapping("/LogOut")
+    @GetMapping("/logOut")
     public String logOut(HttpSession session)
     {
         session.invalidate();
-        return "Redirect:/login";
+        return "redirect:/login";
     }
 
     @GetMapping("/")
