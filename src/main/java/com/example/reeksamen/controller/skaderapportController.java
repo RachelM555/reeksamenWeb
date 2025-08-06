@@ -1,6 +1,7 @@
 package com.example.reeksamen.controller;
 import com.example.reeksamen.model.Kunde;
-import com.example.reeksamen.service.kundeService;
+import com.example.reeksamen.model.Skaderapport;
+import com.example.reeksamen.service.skaderapportService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-public class kundeController
+public class skaderapportController
 {
     @Autowired
- kundeService kundeService;
+   skaderapportService skaderapportService;
 
     // Tjekker om brugeren er logget ind
     private boolean ikkeLoggedInd(HttpSession session) {
@@ -24,37 +25,37 @@ public class kundeController
         return loggedeInd == null || !loggedeInd;
     }
 
-    @GetMapping("/opretKunde")
-    public String visOpretKunde(HttpSession session, Model model) {
+    @GetMapping("/opretSkaderapport")
+    public String opretSkaderapport(HttpSession session, Model model) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
-        model.addAttribute("kunde", new Kunde());
-        return "opretKunde";
+        model.addAttribute("skaderapport", new Skaderapport());
+        return "opretSkaderapport";
     }
 
-    @PostMapping("/opretKunde")
-    public String opretKunde(@ModelAttribute Kunde kunde, HttpSession session) {
+    @PostMapping("/opretSkaderapport")
+    public String opretSkaderapport(@ModelAttribute Skaderapport skaderapport, HttpSession session) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
-        kundeService.addKunde(kunde);
-        return "redirect:/kundeOverblik";
+        skaderapportService.addSkaderapport(skaderapport);
+        return "redirect:/skaderapportOverblik";
     }
 
-    @GetMapping("/kundeOverblik")
-    public String kundeOversigt(HttpSession session, Model model) {
+    @GetMapping("/skaderapportOverblik")
+    public String skaderapportOversigt(HttpSession session, Model model) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
-        List<Kunde> kundeList = kundeService.fetchAll();
-        model.addAttribute("kundeOverblik", kundeList);
-        return "kundeOverblik";
+        List<Skaderapport> skaderapportList = skaderapportService.fetchAll();
+        model.addAttribute("skaderapportOverblik", skaderapportList);
+        return "skaderapportOverblik";
     }
 
-    @PostMapping("/kunde/slet/{id}")
-    public String sletKunde(HttpSession session, @PathVariable("id") int kundeId) {
+    @PostMapping("/skaderapport/slet/{id}")
+    public String sletKunde(HttpSession session, @PathVariable("id") int skadeId) {
         if (ikkeLoggedInd(session)) {
             return "redirect:/login";
         }
-        else kundeService.deleteById(kundeId);
+        else skaderapportService.deleteById(skadeId);
         return "redirect:/kundeOverblik";
     }
 
