@@ -32,17 +32,17 @@
 
 
         <tbody>
-        <tr th:each="rapport : ${rapporter}">
-            <td th:text="${rapport.tilstandsrapportId}"></td>
-            <td th:text="${rapport.bilId}"></td>
-            <td th:text="${rapport.kontraktId}"></td>
-            <td th:text="${#dates.format(rapport.tilstandsrapportDato, 'dd-MM-yyyy')}"></td>
-            <td th:text="${rapport.medarbejderId}"></td>
-            <td th:text="${rapport.erSkadet ? 'Ja' : 'Nej'}"></td>
+        <tr th:each="tilstandsrapport : ${tilstandsrapportOverblik}">
+            <td th:text="${tilstandsrapport.tilstandsrapportId}"></td>
+            <td th:text="${tilstandsrapport.bilId}"></td>
+            <td th:text="${tilstandsrapport.kontraktId}"></td>
+            <td th:text="${#dates.format(tilstandsrapport.tilstandsrapportDato, 'dd-MM-yyyy')}"></td>
+            <td th:text="${tilstandsrapport.medarbejderId}"></td>
+            <td th:text="${tilstandsrapport.erSkadet ? 'Ja' : 'Nej'}"></td>
             <td>
 
                 <div class="slet-knapTilstandsrapport">
-                    <form th:action="@{'/tilstandsrapport/slet/' + ${rapport.tilstandsrapportId}}" method="get"
+                    <form th:action="@{'/tilstandsrapport/slet/' + ${tilstandsrapport.tilstandsrapportId}}" method="get"
                           onsubmit="return confirm('Er du sikker på, at du vil slette denne tilstandsrapport?');">
                         <button type="submit" class="slet-knap">Slet</button>
                     </form>

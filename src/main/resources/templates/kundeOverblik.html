@@ -2,7 +2,7 @@
 <html lang="en">
 
 
-<<head>
+<head>
     <meta charset="UTF-8">
     <title>Kunde Overblik</title>
     <link rel="stylesheet"  th:href="@{/style.css}">
@@ -30,7 +30,7 @@
         </thead>
 
         <tbody>
-        <tr th:each="kunde : ${kundeListe}">
+        <tr th:each="kunde : ${kundeOverblik}">
             <td th:text="${kunde.kundeId}"></td>
             <td th:text="${kunde.navn}"></td>
             <td th:text="${kunde.adresse}"></td>
