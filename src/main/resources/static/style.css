@@ -126,3 +126,29 @@ input {
     background: rgba(255, 255, 255, 0.9);
     margin-bottom: 25px;
 }
+
+.slet-knap {
+    background-color: #e74c3c; /* Rød */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slet-knap:hover {
+    background-color: #c0392b; /* Mørkere rød ved hover */
+}
+
+.opret-knap {
+    background-color: #27ae60; /* Grøn */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opret-knap:hover {
+    background-color: #1e8449; /* Mørkere grøn ved hover */
+}
