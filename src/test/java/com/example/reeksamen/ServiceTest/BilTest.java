@@ -10,14 +10,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/*@SpringBootTest
+@SpringBootTest
 class BilTest {
 
     @Autowired
     private bilService bilservice;
 
 
-    @Test
+    @Test //Happyflow
 
     public void testAddBil() {
         System.out.println("Testen  testAddBil starter");
@@ -30,5 +30,29 @@ class BilTest {
         assertTrue(biler.size() > 0, "Bilen blev ikke tilføjet til listen");
     }
 
+
+    @Test //Unhappyflow
+    public void testAddBilMedTomtMaerke() {
+        System.out.println("Testen testAddBilMedTomtMaerke starter");
+
+        // Opretter bil med tomt mærke
+
+        Bil bil = new Bil(0, "", "Golf", "2020", "random", Bil.Status.LEDIG, 22.22, 22.22);
+        bilservice.addBil(bil);
+        System.out.println("Bilen med tomt mærke er tilføjet");
+
+        List<Bil> biler = bilservice.fetchAll();
+        System.out.println("Listen over biler er hentet");
+
+        // Tjek at bilen IKKE er tilføjet (bilen med tomt mærke burde ikke være i listen)
+        boolean findes = false;
+        for (int i = 0; i < biler.size(); i++) {
+            if (biler.get(i).getMaerke().length() == 0) {  // tjek om mærket er tomt
+                findes = true;
+
+            }
+        }
+        assertTrue(!findes, "Bilen med tomt mærke burde ikke være tilføjet");
+    }
 }
-*/
+
