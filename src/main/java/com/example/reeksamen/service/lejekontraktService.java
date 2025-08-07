@@ -33,7 +33,7 @@ public class lejekontraktService {
         lejekontraktRepo.updateLejekontrakt(kontrakt);
     }
 
-    public void deleteLejekontrakt(int kontraktId, int bilId) {
+    public void deleteById(int kontraktId, int bilId) {
         lejekontraktRepo.deleteLejekontrakt(kontraktId, bilId);
     }
 

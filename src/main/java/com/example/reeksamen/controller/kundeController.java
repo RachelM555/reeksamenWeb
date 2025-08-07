@@ -25,7 +25,7 @@ public class kundeController
     }
 
     @GetMapping("/opretKunde")
-    public String visOpretKunde(HttpSession session, Model model) {
+    public String opretKunde(HttpSession session, Model model) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
         model.addAttribute("kunde", new Kunde());
@@ -33,7 +33,7 @@ public class kundeController
     }
 
     @PostMapping("/opretKunde")
-    public String opretKunde(@ModelAttribute Kunde kunde, HttpSession session) {
+    public String gemKunde(@ModelAttribute Kunde kunde, HttpSession session) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
         kundeService.addKunde(kunde);

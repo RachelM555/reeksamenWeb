@@ -20,15 +20,6 @@ import java.util.List;
             return loggedIn == null || !loggedIn;
         }
 
-        @GetMapping("/tilstandsrapportOverblik")
-        public String tilstandsrapportOversigt(HttpSession session, Model model) {
-            if (ikkeLoggedInd(session)) {
-                return "redirect:/login";
-            }
-            List<Tilstandsrapport> tilstandsrapportList = tilstandsrapportService.fetchAll();
-            model.addAttribute("tilstandsrapportOverblik", tilstandsrapportList);
-            return "tilstandsrapportOverblik";
-        }
 
         @GetMapping("/opretTilstandsrapport")
         public String OpretTilstandsrapport(HttpSession session, Model model) {
@@ -48,6 +39,16 @@ import java.util.List;
             return "redirect:/tilstandsrapportOverblik";
         }
 
+
+        @GetMapping("/tilstandsrapportOverblik")
+        public String tilstandsrapportOversigt(HttpSession session, Model model) {
+            if (ikkeLoggedInd(session)) {
+                return "redirect:/login";
+            }
+            List<Tilstandsrapport> tilstandsrapportList = tilstandsrapportService.fetchAll();
+            model.addAttribute("tilstandsrapportOverblik", tilstandsrapportList);
+            return "tilstandsrapportOverblik";
+        }
         @PostMapping("/tilstandsrapport/slet/{id}")
         public String sletTilstandsrapport(HttpSession session, @PathVariable("id") int tilstandsrapportId) {
             if (ikkeLoggedInd(session)) {

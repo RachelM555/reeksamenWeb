@@ -34,7 +34,7 @@ public class skaderapportController
     }
 
     @PostMapping("/opretSkaderapport")
-    public String opretSkaderapport(@ModelAttribute Skaderapport skaderapport, HttpSession session) {
+    public String gemSkaderapport(@ModelAttribute Skaderapport skaderapport, HttpSession session) {
         if (ikkeLoggedInd(session)) return "redirect:/login";
 
         skaderapportService.addSkaderapport(skaderapport);
