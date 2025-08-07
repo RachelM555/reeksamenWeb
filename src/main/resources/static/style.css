@@ -12,11 +12,12 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* Container til hele login-sektionen */
+/* Container til hele login-sektionen KKKK */
 .login-intro {
     text-align: center;
     margin-bottom: 40px;
 }
+
 
 .login-intro .logo img {
     max-width: 300px;
