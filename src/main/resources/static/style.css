@@ -25,8 +25,9 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Design til ting der skal udfyldes, login, diverse formular osv.  */
-.tabel-login,.tabel-opretBil {
+/* Design til boksen rundt om formularene.  */
+.tabel-login,.tabel-opretBil,.tabeloverskrift-bil,.tabel-opretLejekontrakt,.tabelOverskrift-lejekontrakt,
+.tabel-opretKunde,.tabelOversigt-kunder.ts-formular,.ts-oversigt,.sr-formular,.sr-oversigt {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
