@@ -23,7 +23,7 @@ public class TilstandsrapportRepo {
 
     public void addTilstandsrapport(Tilstandsrapport tilstandsrapport)
     {
-        String sql = " INSERT INTO tilstandsrapport(bilId, kontraktId, tilstandsrapportDato, medarbejderId, erSKadet ) " + "VALUES (?,?,?,?,?)";
+        String sql = " INSERT INTO tilstandsrapport(bilId, kontraktId, tilstandsrapportDato, medarbejderId, erSkadet ) " + "VALUES (?,?,?,?,?)";
         template.update(sql, tilstandsrapport.getBilId(), tilstandsrapport.getKontraktId(), tilstandsrapport.getTilstandsrapportDato(), tilstandsrapport.getMedarbejderId(), tilstandsrapport.isErSkadet());
     }
 
@@ -34,7 +34,7 @@ public class TilstandsrapportRepo {
     }
 
     public int deleteById(int tilstandsrapportId) {
-        String sql = "DELETE FROM tilstandsrapport WHERE tilstandsrapport_id = ?";
+        String sql = "DELETE FROM tilstandsrapport WHERE tilstandsrapportId = ?";
         return template.update(sql, tilstandsrapportId);
     }
 }
