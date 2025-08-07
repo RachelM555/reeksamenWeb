@@ -1,5 +1,15 @@
 /* ===== MENU BAR===== */
 
+/* Body centrerer login-sektionen */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: Arial, sans-serif;
+}
 .menubar {
     background: #333;
 }
@@ -45,16 +55,6 @@
 }
 /* ===== MENU BAR SLUT===== */
 
-/* Body centrerer login-sektionen */
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    font-family: Arial, sans-serif;
-}
 
 /* Container til hele login-sektionen KKKK */
 .login-intro,.intro-opretBil,.intro-bilListe,.intro-opretKontrakt,.intro-kontraktListe,.intro-opretKunde,
