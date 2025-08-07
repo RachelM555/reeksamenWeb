@@ -16,7 +16,7 @@
 <!-- MENUBAR -->
 <nav class="menubar">
     <ul>
-        <li><a class="hovedmenu"th:href="@{/dashboard}" >Dashboard</a></li>
+        <li><a class="hovedmenu" th:href="@{/dashboard}" >Dashboard</a></li>
 
         <li class="dropdown">
             <a th:href="@{/bilOverblik}">Biler</a>
@@ -65,7 +65,7 @@
 </div>
 
 <div class="opret-skadeRapport">
-    <a href="opretskaderapport" class="button">Opret ny skaderapport</a>
+    <a href="/opretskaderapport" class="button">Opret ny skaderapport</a>
 </div>
 
 <div class="sr-oversigt">
@@ -92,8 +92,9 @@
             <td th:text="${skaderapport.prisTotal}"></td>
             <td th:text="${skaderapport.beskrivelse}"></td>
             <td>
-                <!-- RETTET: Slet form med korrekt action og parameter -->
-                <form th:action="@{/skaderapport/slet}" method="post"
+
+
+                <form th:action="@{/skaderapport/slet ${skaderapport.skadeId}}" method="post"
                       onsubmit="return confirm('Er du sikker på, at du vil slette denne skaderapport?');">
                     <input type="hidden" name="id" th:value="${skaderapport.skadeId}" />
                     <button type="submit" class="slet-knapSkaderapport">Slet</button>
