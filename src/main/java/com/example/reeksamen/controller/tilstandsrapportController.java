@@ -16,8 +16,8 @@ import java.util.List;
         tilstandsrapportService tilstandsrapportService;
 
         private boolean ikkeLoggedInd(HttpSession session) {
-            Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
-            return loggedIn == null || !loggedIn;
+            Boolean loggedeInd = (Boolean) session.getAttribute("loggedeInd");
+            return loggedeInd == null || !loggedeInd;
         }
 
 

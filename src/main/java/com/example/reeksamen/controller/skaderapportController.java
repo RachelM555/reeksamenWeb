@@ -21,7 +21,7 @@ public class skaderapportController
 
     // Tjekker om brugeren er logget ind
     private boolean ikkeLoggedInd(HttpSession session) {
-        Boolean loggedeInd = (Boolean) session.getAttribute("loggedIn");
+        Boolean loggedeInd = (Boolean) session.getAttribute("loggedeInd");
         return loggedeInd == null || !loggedeInd;
     }
 
