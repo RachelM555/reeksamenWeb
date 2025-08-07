@@ -43,7 +43,7 @@
             <td th:text="${skaderapport.beskrivelse}"></td>
             <td>
                 <!-- RETTET: Slet form med korrekt action og parameter -->
-                <form th:action="@{'/skaderapport/slet/' + ${skaderapport.skadeId}}" method="post"
+                <form th:action="@{/skaderapport/slet}" method="post"
                       onsubmit="return confirm('Er du sikker på, at du vil slette denne skaderapport?');">
                     <input type="hidden" name="id" th:value="${skaderapport.skadeId}" />
                     <button type="submit" class="slet-knapSkaderapport">Slet</button>
