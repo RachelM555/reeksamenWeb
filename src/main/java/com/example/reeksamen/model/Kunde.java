@@ -53,7 +53,7 @@ public class Kunde {
         this.adresse = adresse;
     }
 
-    public void setTelefonnr(String telefonNr) {
+    public void setTelefonNr(String telefonNr) {
         this.telefonNr = telefonNr;
     }
 
