@@ -14,7 +14,7 @@
 <!-- MENUBAR -->
 <nav class="menubar">
     <ul>
-        <li><a class="hovedmenu"th:href="@{/dashboard}" >Dashboard</a></li>
+        <li><a class="hovedmenu" th:href="@{/dashboard}" >Dashboard</a></li>
 
         <li class="dropdown">
             <a th:href="@{/bilOverblik}">Biler</a>
@@ -66,7 +66,7 @@
 
 
 <div class="ts-formular">
-    <form th:action="@{/tilstandsrapport/gem}" th:object="${rapport}" method="post">
+    <form th:action="@{/opretTilstandsrapport}"  th:object="${rapport}" method="post">
 
 
         <label for="bilId">Bil ID (nummer)</label>
