@@ -25,7 +25,7 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Container for login formular */
+/* Design til boksen  */
 .tabel-login {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
