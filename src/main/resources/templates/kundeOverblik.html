@@ -16,7 +16,7 @@
 <!-- MENUBAR -->
 <nav class="menubar">
     <ul>
-        <li><a class="hovedmenu"th:href="@{/dashboard}" >Dashboard</a></li>
+        <li><a class="hovedmenu" th:href="@{/dashboard}" >Dashboard</a></li>
 
         <li class="dropdown">
             <a th:href="@{/bilOverblik}">Biler</a>
@@ -84,7 +84,7 @@
             <td th:text="${kunde.kundeId}"></td>
             <td th:text="${kunde.navn}"></td>
             <td th:text="${kunde.adresse}"></td>
-            <td th:text="${kunde.telefonnr}"></td>
+            <td th:text="${kunde.telefonNr}"></td>
             <td th:text="${kunde.email}"></td>
             <td>
                 <form th:action="@{'/slet-kunde/' + ${kunde.kundeId}}" method="post"
