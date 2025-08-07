@@ -83,6 +83,7 @@
 
 <tbody>
 <tr th:each="bil: ${bilOverblik}">
+    <td th:text="${bil.bilId}"></td>
     <td th:text="${bil.stelNr}"></td>
     <td th:text="${bil.maerke}"></td>
     <td th:text="${bil.model}"></td>
