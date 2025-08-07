@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <title>Bilabonnement A/S - Dashboard</title>
@@ -10,8 +9,51 @@
 
 <body>
 
+<!-- MENUBAR -->
+<nav class="menubar">
+    <ul>
+        <li><a class="hovedmenu"th:href="@{/dashboard}" >Dashboard</a></li>
 
+        <li class="dropdown">
+            <a th:href="@{/bilOverblik}">Biler</a>
+            <div class="dropdown-content">
+                <a th:href="@{/bilOverblik}">Overblik over biler</a>
+                <a th:href="@{/opretBil}">Opret ny bil</a>
+            </div>
+        </li>
 
+        <li class="dropdown">
+            <a th:href="@{/lejekontraktOverblik}">Lejekontrakter</a>
+            <div class="dropdown-content">
+                <a th:href="@{/lejekontraktOverblik}">Overblik lejekontrakter</a>
+                <a th:href="@{/opretLejekontrakt}">Opret lejekontrakt</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a th:href="@{/kundeOverblik}">Kunder</a>
+            <div class="dropdown-content">
+                <a th:href="@{/kundeOverblik}">Overblik over kunder</a>
+                <a th:href="@{/opretKunde}">Opret kunde</a>
+
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a th:href="@{/tilstandsrapportOverblik}">Rapporter</a>
+            <div class="dropdown-content">
+                <a th:href="@{/tilstandsrapportOverblik}">Tilstandsrapporter</a>
+                <a th:href="@{/opretTilstandsrapport}">Opret tilstandsrapport</a>
+                <a th:href="@{/skaderapportOverblik}">Skaderapporter</a>
+                <a th:href="@{/opretSkaderapport}">Opret skaderapport</a>
+            </div>
+        </li>
+
+        <li><a th:href="@{/logout}">Log ud</a></li>
+    </ul>
+</nav>
+
+<!-- MENUBAR SLUT-->
 
 
 
@@ -22,10 +64,5 @@
 
 
 </body>
-
-
-
-
-
 
 </html>
