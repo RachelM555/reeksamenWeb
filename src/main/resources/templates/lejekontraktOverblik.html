@@ -44,7 +44,7 @@
             <td th:text="${lejekontrakt.medarbejderId}"></td>
 
             <td>
-                <form th:action="@{'/slet-lejekontrakt/' + ${lejekontrakt.kontraktId}}" method="get"
+                <form th:action="@{'/slet-lejekontrakt/' + ${lejekontrakt.kontraktId}}" method="post"
                       onsubmit="return confirm('Er du sikker på, at du vil slette denne lejekontrakt?');"
                       style="display: inline;">
                     <button type="submit" class="slet-knap">Slet</button>

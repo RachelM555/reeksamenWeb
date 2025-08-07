@@ -37,7 +37,7 @@
             <td th:text="${kunde.telefonnr}"></td>
             <td th:text="${kunde.email}"></td>
             <td>
-                <form th:action="@{'/slet-kunde/' + ${kunde.kundeId}}" method="get"
+                <form th:action="@{'/slet-kunde/' + ${kunde.kundeId}}" method="post"
                       onsubmit="return confirm('Er du sikker på, at du vil slette denne kunde?');"
                       style="display: inline;">
                     <button type="submit" class="slet-knap">Slet</button>
