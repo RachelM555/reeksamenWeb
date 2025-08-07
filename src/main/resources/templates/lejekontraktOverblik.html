@@ -14,7 +14,7 @@
 <!-- MENUBAR -->
 <nav class="menubar">
     <ul>
-        <li><a class="hovedmenu"th:href="@{/dashboard}" >Dashboard</a></li>
+        <li><a class="hovedmenu" th:href="@{/dashboard}" >Dashboard</a></li>
 
         <li class="dropdown">
             <a th:href="@{/bilOverblik}">Biler</a>
@@ -90,15 +90,13 @@
             <td th:text="${lejekontrakt.medarbejderId}"></td>
 
             <td>
-                <form th:action="@{'/slet-lejekontrakt/' + ${lejekontrakt.kontraktId}}" method="post"
+                <form th:action="@{'/lejekontrakt/slet/' + ${lejekontrakt.kontraktId}}" method="post"
                       onsubmit="return confirm('Er du sikker på, at du vil slette denne lejekontrakt?');"
                       style="display: inline;">
+                    <input type="hidden" name="bilId" th:value="${lejekontrakt.bilId}" />
                     <button type="submit" class="slet-knap">Slet</button>
                 </form>
 
-                <a th:href="@{'/updateLejekontrakt/' + ${lejekontrakt.kontraktId}}">
-                    <button class="update-knap">Rediger</button>
-                </a>
             </td>
         </tr>
         </tbody>

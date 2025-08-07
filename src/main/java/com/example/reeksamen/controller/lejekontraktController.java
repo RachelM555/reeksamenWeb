@@ -6,10 +6,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -64,17 +61,17 @@ public class lejekontraktController {
     }
 
     @PostMapping("/lejekontrakt/slet/{id}")
-    public String sletLejekontrakt(HttpSession session, @PathVariable("id") int lejekontraktId, int bilId)
-    {
-        if(ikkeLoggedInd(session))
-        {
+    public String sletLejekontrakt(HttpSession session,
+                                   @PathVariable("id") int lejekontraktId,
+                                   @RequestParam("bilId") int bilId) {
+        if (ikkeLoggedInd(session)) {
             return "redirect:/login";
         }
 
         lejekontraktService.deleteById(lejekontraktId, bilId);
         return "redirect:/lejekontraktOverblik";
-
     }
+
 
 
 
