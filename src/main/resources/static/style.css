@@ -25,8 +25,8 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Design til boksen  */
-.tabel-login {
+/* Design til ting der skal udfyldes, login, diverse formular osv.  */
+.tabel-login,.tabel-opretBil {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
