@@ -1,24 +1,35 @@
-/* ===== MENU BAR===== */
-
-/* Body centrerer login-sektionen */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
 }
+
+/* Intro-sektion (fx login-intro) */
+.login-intro, .intro-opretBil, .intro-bilListe, .intro-opretKontrakt, .intro-kontraktListe,
+.intro-opretKunde, .intro-kundeOverblik, .intro-tsformular, .intro-tsrapportlist,
+.intro-sr, .intro-srListe {
+    text-align: center;
+    margin: 40px auto 20px;
+    max-width: 800px;
+    color: white;
+}
+
+/* Menubar */
 .menubar {
+    position: fixed;
     background: #333;
+    width: 100%;
+
 }
 
 .menubar ul {
     list-style: none;
-    display: flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .menubar li {
@@ -44,6 +55,7 @@ body {
     top: 100%;
     left: 0;
     min-width: 160px;
+    z-index: 1000;
 }
 
 .dropdown:hover .dropdown-content {
@@ -52,28 +64,15 @@ body {
 
 .dropdown-content a {
     padding: 12px 16px;
-}
-/* ===== MENU BAR SLUT===== */
-
-
-/* Container til hele login-sektionen KKKK */
-.login-intro,.intro-opretBil,.intro-bilListe,.intro-opretKontrakt,.intro-kontraktListe,.intro-opretKunde,
-.intro-kundeOverblik,.intro-tsformular,.intro-tsrapportlist,.intro-sr,.intro-srListe
-{
-    text-align: center;
-    margin-bottom: 40px;
+    color: white;
+    text-decoration: none;
+    display: block;
 }
 
-
-.login-intro .logo img {
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Design til boksen rundt om formularene.  */
-.tabel-login,.tabel-opretBil,.tabeloverskrift-bil,.tabel-opretLejekontrakt,.tabelOverskrift-lejekontrakt,
-.tabel-opretKunde,.tabelOversigt-kunder.ts-formular,.ts-oversigt,.sr-formular,.sr-oversigt {
+/* Formularboks styling - centreret med margin auto og max-width */
+.tabel-login, .tabel-opretBil, .tabeloverskrift-bil, .tabel-opretLejekontrakt,
+.tabelOverskrift-lejekontrakt, .tabel-opretKunde, .tabelOversigt-kunder.ts-formular,
+.ts-oversigt, .sr-formular, .sr-oversigt {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -82,6 +81,7 @@ body {
     width: 100%;
     max-width: 450px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 40px auto; /* centrerer boksene */
 }
 
 /* Fejlbesked styling */
@@ -115,5 +115,3 @@ input {
     background: rgba(255, 255, 255, 0.9);
     margin-bottom: 25px;
 }
-
-
