@@ -100,6 +100,12 @@ public class Lejekontrakt {
     public void setMedarbejderId(int medarbejderId) {
         this.medarbejderId = medarbejderId;
     }
+
+    //Tilføjet så den kunne bruges i html
+    public String getAbonnementTypeNavn() {
+        return abonnementType.name();
+    }
+
 }
 
 
