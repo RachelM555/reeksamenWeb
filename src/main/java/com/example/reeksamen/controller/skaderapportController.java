@@ -56,7 +56,7 @@ public class skaderapportController
             return "redirect:/login";
         }
         skaderapportService.deleteById(skadeId);
-        return "redirect:/kundeOverblik";
+        return "redirect:/skaderapportOverblik";
     }
 //b
 
