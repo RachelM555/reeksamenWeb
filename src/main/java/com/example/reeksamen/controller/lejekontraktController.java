@@ -71,7 +71,7 @@ public class lejekontraktController {
             return "redirect:/login";
         }
 
-        else lejekontraktService.deleteById(lejekontraktId, bilId);
+        lejekontraktService.deleteById(lejekontraktId, bilId);
         return "redirect:/lejekontraktOverblik";
 
     }

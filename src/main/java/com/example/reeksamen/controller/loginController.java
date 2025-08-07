@@ -45,7 +45,7 @@ public class loginController {
             session.setAttribute("loggedeInd", true);
             return "redirect:/dashboard";
         }
-        else model.addAttribute("fejl","Forkert email eller adgangskode");
+        model.addAttribute("fejl","Forkert email eller adgangskode");
         return "login";
     }
 

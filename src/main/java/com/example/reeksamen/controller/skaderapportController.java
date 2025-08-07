@@ -55,7 +55,7 @@ public class skaderapportController
         if (ikkeLoggedInd(session)) {
             return "redirect:/login";
         }
-        else skaderapportService.deleteById(skadeId);
+        skaderapportService.deleteById(skadeId);
         return "redirect:/kundeOverblik";
     }
 //b

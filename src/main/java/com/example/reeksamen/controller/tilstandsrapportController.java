@@ -54,9 +54,9 @@ import java.util.List;
             if (ikkeLoggedInd(session)) {
                 return "redirect:/login";
             }
-           else tilstandsrapportService.deleteById(tilstandsrapportId);
+         tilstandsrapportService.deleteById(tilstandsrapportId);
             return "redirect:/tilstandsrapportOverblik";
         }
     }
 
-//b
+

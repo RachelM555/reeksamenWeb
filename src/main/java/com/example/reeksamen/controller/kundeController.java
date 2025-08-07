@@ -54,7 +54,7 @@ public class kundeController
         if (ikkeLoggedInd(session)) {
             return "redirect:/login";
         }
-        else kundeService.deleteById(kundeId);
+         kundeService.deleteById(kundeId);
         return "redirect:/kundeOverblik";
     }
 

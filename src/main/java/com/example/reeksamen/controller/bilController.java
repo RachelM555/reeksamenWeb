@@ -81,7 +81,7 @@ public class bilController {
             return "redirect:/login";
         }
 
-        else bilService.deleteById(bilId);
+        bilService.deleteById(bilId);
 
         return "redirect:/bilOverblik";
 
