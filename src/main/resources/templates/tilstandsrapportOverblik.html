@@ -90,7 +90,7 @@
             <td>
 
                 <div class="slet-knapTilstandsrapport">
-                    <form th:action="@{/tilstandsrapport/slet/{id}(id=${tilstandsrapport.tilstandsrapportId})}" method="post"
+                    <form th:action="@{'/tilstandsrapport/slet/' + ${tilstandsrapport.tilstandsrapportId}}" method="post"
                           onsubmit="return confirm('Er du sikker på, at du vil slette denne tilstandsrapport?');">
                         <button type="submit" class="slet-knap">Slet</button>
                     </form>
