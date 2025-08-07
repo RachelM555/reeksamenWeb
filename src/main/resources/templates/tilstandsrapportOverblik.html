@@ -84,7 +84,7 @@
             <td th:text="${tilstandsrapport.tilstandsrapportId}"></td>
             <td th:text="${tilstandsrapport.bilId}"></td>
             <td th:text="${tilstandsrapport.kontraktId}"></td>
-            <td th:text="${#dates.format(tilstandsrapport.tilstandsrapportDato, 'dd-MM-yyyy')}"></td>
+            <td th:text="${tilstandsrapport.tilstandsrapportDato}"></td>
             <td th:text="${tilstandsrapport.medarbejderId}"></td>
             <td th:text="${tilstandsrapport.erSkadet ? 'Ja' : 'Nej'}"></td>
             <td>
