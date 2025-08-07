@@ -13,7 +13,9 @@ body {
 }
 
 /* Container til hele login-sektionen KKKK */
-.login-intro {
+.login-intro,.intro-opretBil,.intro-bilListe,.intro-opretKontrakt,.intro-kontraktListe,.intro-opretKunde,
+.intro-kundeOverblik,.intro-tsformular,.intro-tsrapportlist,.intro-sr,.intro-srListe
+{
     text-align: center;
     margin-bottom: 40px;
 }
