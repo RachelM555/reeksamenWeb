@@ -109,7 +109,7 @@
    <form th:action="@{/opretBil}" th:object="${bil}" method="post">
 
        <label for="stelNr"> Stelnummer:</label>
-       <input type="number" id="stelNr" th:field="*{stelNr}" required>
+       <input type="text" id="stelNr" th:field="*{stelNr}" required>
 
        <label for="maerke"> Mærke: </label>
        <input type="text" id="maerke" th:field="*{maerke}" required>
