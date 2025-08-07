@@ -1,37 +1,39 @@
-/* ===== GENEREL OPSÆTNING ===== */
-
-/* Body uden centrering (kun til login), men med baggrund og font */
 body {
     margin: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
 }
 
-/* ===== MENU BAR ===== */
+/* Intro-sektion (fx login-intro) */
+.login-intro, .intro-opretBil, .intro-bilListe, .intro-opretKontrakt, .intro-kontraktListe,
+.intro-opretKunde, .intro-kundeOverblik, .intro-tsformular, .intro-tsrapportlist,
+.intro-sr, .intro-srListe {
+    text-align: center;
+    margin: 40px auto 20px;
+    max-width: 800px;
+    color: white;
+}
 
+/* Menubar */
 .menubar {
     background: #333;
-    position: fixed; /* Gør menuen fast øverst */
     width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
-/* Horisontal menu */
 .menubar ul {
     list-style: none;
-    display: flex;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
 }
 
-/* Menu-elementer */
 .menubar li {
     position: relative;
 }
 
-/* Links i menuen */
 .menubar a {
     display: block;
     padding: 15px 20px;
@@ -43,7 +45,7 @@ body {
     background: #555;
 }
 
-/* Dropdown indhold skjules som udgangspunkt */
+/* Dropdown menu */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -51,9 +53,9 @@ body {
     top: 100%;
     left: 0;
     min-width: 160px;
+    z-index: 1000;
 }
 
-/* Når musen er over dropdownen, vis indholdet */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -62,95 +64,38 @@ body {
     padding: 12px 16px;
     color: white;
     text-decoration: none;
+    display: block;
 }
 
-/* ===== OVERSKRIFT (biloversigt) ===== */
 
-.intro-bilListe {
-    text-align: center;
-    margin-top: 100px; /* Laver plads til den faste menubar */
-    margin-bottom: 20px;
-    color: white;
-}
-
-/* ===== TABEL MED BILER ===== */
-
-.tabeloverskrift-bil {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-/* Hele tabellen */
 table {
     border-collapse: collapse;
-    width: 90%;
-    max-width: 1000px;
-    background: white;
-    border-radius: 10px;
+    width: 100%;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Celler */
 th, td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: center;
+    padding: 18px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Tabelhoved */
 th {
-    background-color: #333;
+    background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
 }
 
-/* Tabelrækker */
-td {
-    color: #333;
-    background-color: #f9f9f9;
-}
 
-/* ===== KNAPPER ===== */
-
-/* Slet-knap */
-.slet-knap {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 5px;
-}
-
-.slet-knap:hover {
-    background-color: #c0392b;
-}
-
-/* Opret-knap */
-.opret-knap {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.opret-knap:hover {
-    background-color: #219150;
-}
-
-/* Opret-knap container */
-.opret-bil {
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* ===== FEJLBESKED ===== */
-
+/* Fejlbesked styling */
 .fejl-besked {
     color: red;
     margin-bottom: 15px;
@@ -158,8 +103,7 @@ td {
     font-weight: bold;
 }
 
-/* ===== LABELS ===== */
-
+/* Label styling */
 label {
     display: block;
     margin-bottom: 8px;
@@ -170,8 +114,7 @@ label {
     letter-spacing: 0.5px;
 }
 
-/* ===== INPUTFELTER ===== */
-
+/* Input felter */
 input {
     width: 100%;
     padding: 15px;
@@ -182,53 +125,4 @@ input {
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.9);
     margin-bottom: 25px;
-}
-
-/* ===== FORMULAR-BOKSE ===== */
-/* Bruger samme klasse til login, opret og oversigter */
-
-.tabel-login,
-.tabel-opretBil,
-.tabeloverskrift-bil,
-.tabel-opretLejekontrakt,
-.tabelOverskrift-lejekontrakt,
-.tabel-opretKunde,
-.tabelOversigt-kunder,
-.ts-formular,
-.ts-oversigt,
-.sr-formular,
-.sr-oversigt {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-    width: 100%;
-    max-width: 450px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* ===== INTRO-SEKTIONER ===== */
-
-.login-intro,
-.intro-opretBil,
-.intro-bilListe,
-.intro-opretKontrakt,
-.intro-kontraktListe,
-.intro-opretKunde,
-.intro-kundeOverblik,
-.intro-tsformular,
-.intro-tsrapportlist,
-.intro-sr,
-.intro-srListe {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* ===== LOGO ===== */
-
-.login-intro .logo img {
-    max-width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
