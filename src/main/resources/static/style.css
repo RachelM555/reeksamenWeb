@@ -106,6 +106,23 @@ table {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+.tabel-opretBil, .tabel-opretKunde, .tabel-opretLejekontrakt, .sr-formular, .ts-formular
+{
+    border-collapse: collapse;
+    width: 150%;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
 
 th, td {
     padding: 18px 20px;
