@@ -51,14 +51,20 @@ public class lejekontraktController {
     @GetMapping("/lejekontraktOverblik")
     public String lejekontraktOversigt(HttpSession session, Model model)
     {
-        if(ikkeLoggedInd(session))
-        {
+        if (ikkeLoggedInd(session)) {
             return "redirect:/login";
         }
+
         List<Lejekontrakt> lejekontraktList = lejekontraktService.fetchAll();
         model.addAttribute("lejekontraktOverblik", lejekontraktList);
+
+        // Beregn samlet pris metode
+        double samletPris = lejekontraktService.beregnSamletPris();
+        model.addAttribute("samletPris", samletPris);
+
         return "lejekontraktOverblik";
     }
+
 
     @PostMapping("/lejekontrakt/slet/{id}")
     public String sletLejekontrakt(HttpSession session,

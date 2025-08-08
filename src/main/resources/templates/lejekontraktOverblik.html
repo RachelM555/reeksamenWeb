@@ -2,19 +2,17 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet"  th:href="@{/style.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <meta charset="UTF-8">
     <title>Overblik over lejekontrakterne</title>
 </head>
-
-
 
 <body>
 
 <!-- MENUBAR -->
 <nav class="menubar">
     <ul>
-        <li><a class="hovedmenu" th:href="@{/dashboard}" >Dashboard</a></li>
+        <li><a class="hovedmenu" th:href="@{/dashboard}">Dashboard</a></li>
 
         <li class="dropdown">
             <a th:href="@{/bilOverblik}">Biler</a>
@@ -37,7 +35,6 @@
             <div class="dropdown-content">
                 <a th:href="@{/kundeOverblik}">Overblik over kunder</a>
                 <a th:href="@{/opretKunde}">Opret kunde</a>
-
             </div>
         </li>
 
@@ -56,16 +53,17 @@
 </nav>
 <!-- MENUBAR SLUT-->
 
-
 <div class="intro-kontraktListe">
     <h1>Liste over lejekontrakter</h1>
 </div>
+
 <!-- opret lejekontrakt knappen-->
 <div class="opret-knaplejekontrakt">
     <a href="/opretLejekontrakt">
         <button class="opret-knap">Opret ny lejekontrakt</button>
     </a>
 </div>
+
 <div class="tabelOverskrift-lejekontrakt">
     <table>
         <thead>
@@ -78,8 +76,7 @@
             <th>Abonnementstype</th>
             <th>Pris</th>
             <th>Medarbejder ID</th>
-            <th> Handlinger</th>
-
+            <th>Handlinger</th>
         </tr>
         </thead>
 
@@ -90,7 +87,7 @@
             <td th:text="${lejekontrakt.bilId}"></td>
             <td th:text="${lejekontrakt.startDato}"></td>
             <td th:text="${lejekontrakt.slutDato}"></td>
-            <td th:text="${lejekontrakt.abonnementTypeNavn}"></td> <!-- er ændret for at se om det var fejlen-->
+            <td th:text="${lejekontrakt.abonnementTypeNavn}"></td>
             <td th:text="${lejekontrakt.pris}"></td>
             <td th:text="${lejekontrakt.medarbejderId}"></td>
 
@@ -101,23 +98,16 @@
                     <input type="hidden" name="bilId" th:value="${lejekontrakt.bilId}" />
                     <button type="submit" class="slet-knap">Slet</button>
                 </form>
-
             </td>
         </tr>
         </tbody>
     </table>
 </div>
 
-
-
-
-
+<!-- Samlet pris -->
+<div class="samlet-pris">
+    <h2>Samlet pris: <span th:text="${samletPris} + ' kr.'"></span></h2>
+</div>
 
 </body>
-
-
-
-
-
-
 </html>

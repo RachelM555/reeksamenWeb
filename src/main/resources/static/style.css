@@ -94,7 +94,7 @@ body {
     display: block;
 }
 
-
+/* alle overblik klasser, der har en tabel */
 table {
     border-collapse: collapse;
     width: 100%;
@@ -106,12 +106,15 @@ table {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+
 th, td {
     padding: 18px 20px;
     text-align: left;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
+
+/* Overskriften til tabellerne */
 th {
     background: linear-gradient(135deg, #3498db, #2980b9);
     color: white;
@@ -141,7 +144,7 @@ label {
     letter-spacing: 0.5px;
 }
 
-/* Input felter */
+/* Input felter der hvor der skrives ting i  */
 input {
     width: 100%;
     padding: 15px;
@@ -211,3 +214,13 @@ input {
     font-weight: bold;
     color: #4CAF50; /* Grøn farve til rolle/brugernavn */
 }
+
+
+
+/* styling til samletpris*/
+.samlet-pris {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
