@@ -106,15 +106,17 @@ table {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.tabel-opretBil form, .tabel-opretKunde form, .tabel-opretLejekontrakt form, .sr-formular form, .ts-formular form
+.tabel-opretBil, .tabel-opretKunde, .tabel-opretLejekontrakt, .sr-formular, .ts-formular
 {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 10px 20px;
-    align-items: center;
+    border-collapse: collapse;
+    width: 50%;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
-
-
 
 
 
