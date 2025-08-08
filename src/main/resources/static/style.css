@@ -172,7 +172,7 @@ input {
     background-color: #c0392b; /* Mørkere rød ved hover */
 }
 
-.opret-knap, .tilbage-knap {
+.opret-knap {
     background-color: #27ae60; /* Grøn */
     color: white;
     border: none;
@@ -181,7 +181,7 @@ input {
     cursor: pointer;
 }
 
-.opret-knap:hover, .tilbage-knap:hover {
+.opret-knap:hover {
     background-color: #1e8449; /* Mørkere grøn ved hover */
 }
 
